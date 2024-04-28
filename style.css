@@ -1,0 +1,288 @@
+/* Font style */
+@font-face {
+  font-family: "gotham";
+  src: url(./Assets/font/gotham/Gotham-Bold.otf) format("otf2");
+  src: url(./Assets/font/gotham/GothamBook.woff2) format("woff2");
+  src: url(./Assets/font/gotham/GothamBook.woff) format("woff");
+  src: url(./Assets/font/gotham/GothamBook.ttf) format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "gotham";
+}
+
+html {
+  margin-top: -15rem;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+/* ------------------------------------------- */
+
+/* Title */
+.heading {
+  position: relative;
+  padding-bottom: 30px;
+  color: #114a8dcc;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 57.6px;
+  text-align: left;
+}
+
+/* title span */
+.heading span {
+  color: black;
+}
+
+/* ---------------------------------------------- */
+/* CSS for text on image */
+.text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  bottom: 15px;
+  transition: bottom 0.5s ease;
+}
+
+/* CSS for span   */
+.text .title span {
+  text-align: center;
+  color: #ffc758;
+}
+
+.card-box:hover .text {
+  opacity: 0;
+  bottom: 30px;
+}
+
+/* ------------------------------------------- */
+/* CSS for image shades */
+.card-box .shades {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1.6), transparent 60%);
+}
+
+/* ----------------------------------------------- */
+/* main card */
+.card {
+  padding: 20rem 8% 4rem;
+}
+
+.card h2 {
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* card container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 5.5rem;
+}
+
+.card-container .card-box {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.card-box img {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+/* card layer for hover effect */
+.card-box .card-layer {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  height: 0;
+  width: 0;
+  background: #114a8dcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  transition: height 0.4s ease-in, width 0.4s ease-in;
+  padding: 0;
+}
+.card-box:hover .card-layer {
+  height: calc(100% - 60px);
+  width: 100%;
+  padding: 1rem;
+}
+
+/* ------------------------------------------- */
+/* Text Title on hover effect  */
+.card-box .text-container {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  display: inline-block;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  bottom: 20rem;
+  transition: bottom 0.5s ease;
+}
+
+h2 span {
+  text-align: center;
+  color: #ffc758;
+}
+
+.card-box:hover .text-container {
+  opacity: 1;
+  bottom: 60%;
+}
+
+.card-box:hover .text-container2 {
+  opacity: 1;
+  bottom: 5%;
+}
+
+/* Text title on paragraph in hover effect */
+.text-container2 {
+  position: absolute;
+  /* bottom: 0; */
+  bottom: 5%;
+  width: 100%;
+  height: calc(100% - 30px);
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+  bottom: 0;
+  transition: bottom 0.9s ease;
+}
+
+/* -------------------------------------------------- */
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+
+  .card-box .text-container {
+    padding: 5px;
+    font-size: 25px;
+    top: 35px;
+  }
+
+  .text-container2 {
+    padding: 7px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 60%;
+  }
+  .header {
+    padding: 2rem 4%;
+  }
+
+  .card-box .text {
+    font-size: 20px;
+  }
+
+  .card-box .text-container {
+    padding: 5px;
+    font-size: 15px;
+    top: 35px;
+  }
+
+  .text-container2 {
+    padding: 7px;
+    font-size: 10px;
+  }
+
+  section {
+    padding: 10rem 4% 2rem;
+  }
+
+  .card {
+    padding-bottom: 7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 30%;
+  }
+
+  .card-box .text-container {
+    padding: 5px;
+    font-size: 20px;
+    top: 35px;
+  }
+  .text-container2 {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .card h2 {
+    margin-bottom: 3rem;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  html {
+    font-size: 50%;
+  }
+
+  .card-box .text {
+    font-size: 10px;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
